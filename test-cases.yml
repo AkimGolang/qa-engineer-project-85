@@ -346,13 +346,13 @@
     Пользователь должен иметь возможность создать в турниры
   prerequisites: |
     Пользователь зарегистрирован и вошел в свой профиль на сайте
-    Открыта страница турниров (https://codebattle.hexlet.io/#tournaments)
+    Открыта главная страница сайта (https://codebattle.hexlet.io/)
   test-data: |
     test-data: |
     Name = My fancy tournament
     Type = individual
     Description = Some description
-    Start date = 19/05/2025 19:42
+    Start date = 20/05/2025 10:00
     Access type = public
     Task strategy = random_per_game
     Score strategy = winn_loss
