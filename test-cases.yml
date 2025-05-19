@@ -124,7 +124,7 @@
     Пользователь должен получить сообщение об ошибке "EMAIL_NOT_FOUND"
     Пользователь не вошел в систему
 
-summary: |
+- summary: |
     Проверка неуспешного входа с неправильным паролем
   requirement: |
     При вводе неправильного пароля пользователь должен получить сообщение об ошибке "INVALID_PASSWORD"
@@ -348,15 +348,62 @@ summary: |
     Пользователь зарегистрирован и вошел в свой профиль на сайте
     Открыта страница турниров (https://codebattle.hexlet.io/#tournaments)
   test-data: |
-    Email = VladimirKomarov@mail.ru
-    Пароль = Q123456!
+    test-data: |
+    Name = My fancy tournament
+    Type = individual
+    Description = Some description
+    Start date = 19/05/2025 19:42
+    Access type = public
+    Task strategy = random_per_game
+    Score strategy = winn_loss
+    Use chat = (галочка стоит)
+    Use timer = (галочка стоит)
+    Task provider = level
+    Level = easy
+    Event = (оставить пустым)
+    Players limit = 64
+    Match timeout seconds = 177
+    Break duration seconds = 42
   steps:
-    - Нажать кнопку "You may want to create one"
-    - Перейти в конец страницы
-    - Заполнить поля "Name", "Type", "Events"
+    - Перейти в раздел "Tournaments"
+    - Нажать "You may want to create one"
+    - перейти в конец страницы до раздела "Create a new tournament"
+    - Заполнить поле "Name" значением "My fancy tournament"
+    - В поле Type выбрать "individual"
+    - В поле "Description" написать "Some description"
+    - Установить дату начала "20/05/2025 10:00"
+    - В поле "Access type" выбрать "public"
+    - В поле "Task strategy" выбрать "random_per_game"
+    - В поле "Score strategy" выбрать "winn_loss"
+    - Отметить чекбоксы "Use chat" и "Use timer"
+    - В поле "Task provider" выбрать "level"
+    - В поле "Level" выбрать "easy"
+    - Поле "Event" оставить пустым
+    - В поле "Players limit" ввести "64"
+    - В поле "Match timeout seconds" ввести "177"
+    - В поле "Break duration seconds" ввести "42"
     - Нажать кнопку "Create"
   expected-result: |
+    Турнир успешно создаётся
     Пользователь должен попасть на страницу созданного турнира (Название турнира, чат, количество участников, описание)
+
+- summary: |
+    Проверка предоставления возможности присоединиться к турниру
+  requirement: |
+    Пользователь должен иметь возможность присоединяться к созданным турнирам
+  prerequisites: |
+    Пользователь зарегистрирован и вошел в свой профиль на сайте
+    Открыта страница (https://codebattle.hexlet.io/)
+  test-data: |
+    No data
+  steps:
+    - На главной странце перейти раздел "Tournaments"
+    - Выбрать любой доступный турнир и нажать "Show"
+    - Проверить что пользователь находиться в интерфейсе турнира (Название турнира, чат, количество участников, описание)
+    - Нажать кнопку "Join"
+    - Проверить что пользователь присоединился к турниру (Имя пользователя появилось в списке участников)
+  expected-result: |
+    Пользователь должен появится в списке участников турнира
 
 - summary: |
     Проверка предоставления возможности присоединиться к созданной игре
@@ -375,23 +422,6 @@ summary: |
   expected-result: |
     Открывается интерфейс игры (Задание, окна для написания кода, таймер, окно чата)
     Начинается игра против другого игрока
-
-- summary: |
-    Проверка предоставления возможности присоединиться к турниру
-  requirement: |
-    Пользователь должен иметь возможность присоединяться к созданным турнирам
-  prerequisites: |
-    Пользователь зарегистрирован и вошел в свой профиль на сайте
-    Открыта страница (https://codebattle.hexlet.io/)
-  test-data: |
-    Email = VladimirKomarov@mail.ru
-    Пароль = Q123456!
-  steps:
-    - На главной странце найти раздел "Tournaments"
-    - Выбрать любой доступный турнир и нажать "Show"
-    - Нажать кнопку "Join"
-  expected-result: |
-    Пользователь должен появится в списке участников турнира
 
 - summary: |
     Проверка, наличия на главной странице отображаения числа пользователей онлайн
@@ -442,7 +472,43 @@ summary: |
     Открывается страница профиля пользователя с основной информацией о нем (имя пользователя, рейтинг, статистика)
 
 - summary: |
-    Проверка возможности изменения языка программирования в профиле пользователя
+    Проверка возможности изменить имя пользователя  
+  requirement: |
+    На сайте должен быть реализован профиль пользователя
+  prerequisites:
+    Пользователь зарегистрирован и вошел в свой профиль на сайте
+    Открыта главная страница сайта (https://codebattle.hexlet.io/)
+  test-data: | 
+    Email = VladimirKomarov@mail.ru
+    Пароль = Q123456!
+  steps:
+    - Нажать на имя пользователя
+    - Нажать на "Settings"
+    - В поле "Your name" вводим новое имя
+    - Нажимаем на "Save"
+  expected-result: |
+    Имя пользователя изменилось
+
+- summary: |
+    Проверка возможности создать свой клан
+  requirement: |
+    На сайте должен быть реализован профиль пользователя
+  prerequisites:
+    Пользователь зарегистрирован и вошел в свой профиль на сайте
+    Открыта главная страница сайта (https://codebattle.hexlet.io/) 
+  test-data: | 
+    Email = VladimirKomarov@mail.ru
+    Пароль = Q123456!
+  steps:
+    - Нажать на имя пользователя
+    - Нажать на "Settings"
+    - В поле "Your clan" ввести "Good_Clan"
+    - Нажать на кнопку "Save"
+  expected-result: |
+    Создается клан с выбранным названием
+
+- summary: |
+    Проверка возможности изменить язык программирования в профиле пользователя
   requirement: |
     Пользователь должен иметь возможность изменить используемый язык программирования в своем профиле
   prerequisites: |
@@ -541,7 +607,12 @@ summary: |
     Task = rect_area
   steps:
     - Запустить игру
-    - Написать в "return" значение "width * length"
+    - Написать "const _ = require("lodash");
+               const R = require("rambda");
+               const solution = (width, length) => {
+                 return width * length;
+               };
+               module.exports = solution;"
     - Нажать на кнопку "Run"
   expected-result: |
     Пользователь получает уведомление о победе "Woohoo, you're Champion!!!!!"
@@ -554,10 +625,15 @@ summary: |
     Пользователь зарегистрирован и вошел в свой профиль на сайте
     Пользователь вступил в игру с ранее выбраными условиями
   test-data: |
-    Task = rect_area
+    No data
   steps:
-    - Запустить игру
-    - Дождаться когда соперник закончит решать задачу и запустит проверку 
+    - Нажать "Create a Game"
+    - В открывшемся окне выбрать Level - 4
+    - Game Type - with a bot
+    - Time control - 3 min
+    - Choose task by name or tags - rect_area
+    - Нажать "Create battle"
+    - Дождаться победы бота
   expected-result: |
     Пользователь получает уведомление о проигрыше "If you read this you've lost the game"
 
@@ -604,7 +680,6 @@ summary: |
     любая задача
   steps:
     - Запустить игру
-    - Ввести любые значения в редактор
     - Нажать на кнопку "Run"
   expected-result: |
     Пользователь получит уведомление "test failed"
@@ -616,11 +691,15 @@ summary: |
   prerequisites: |
     Открыта главная страница  (https://codebattle.hexlet.io/)
   test-data: |
-    No data
+    IPhone SE (375×667 пикселей)
+    Pixel 7 (412×915 пикселей)
+    IPad Mini (768×1024 пикселей)
+    Asus Zenbook Fold (853×1280 пикселей)
+    Samsung Galaxy 51/71 (412×914 пикселей)
   steps:
     - Открываем DevTools
     - При помощи сочетания клавиш Ctr+Shift+M открываем Toggle Device Toolbar
-    - В меню Dimensions поочередно выбираем несколько устройств
+    - В меню Dimensions поочередно выбираем устройства из списка
     - Проверить что верстка не съехала
     - Проверить правильность отображения шапки сайта и логотипа
     - Проверить страницу на отсутствие горизонтального скролла
