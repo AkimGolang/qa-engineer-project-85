@@ -628,9 +628,9 @@
     No data
   steps:
     - Нажать "Create a Game"
-    - В открывшемся окне выбрать Level - 4
+    - В открывшемся окне выбрать Level - 1
     - Game Type - with a bot
-    - Time control - 3 min
+    - Time control - 8 min
     - Choose task by name or tags - rect_area
     - Нажать "Create battle"
     - Дождаться победы бота
