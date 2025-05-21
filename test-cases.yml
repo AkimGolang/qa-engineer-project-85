@@ -2,7 +2,7 @@
 - summary: |
     Проверка успешной регистрации на сайте
   requirement: |
-    Пользователь должен иметь возможность зарегистрироваться и войти в аккаунт
+    Пользователь должен иметь возможность зарегистрироваться и войти в аккаунт при помощи email и пароля
   prerequisites: |
     Открыта страница регистрации (https://codebattle.hexlet.io/users/new?locale=en&next=%2F)
   test-data: |
@@ -64,6 +64,7 @@
   requirement: |
     Пользователь должен иметь возможность зарегистрироваться и войти на сайт при помощи Github
   prerequisites: |
+    Необходим аккаунт в Discord
     Открыта страница регистрации (https://codebattle.hexlet.io/users/new?locale=en&next=%2F)
   test-data: |
     no data
@@ -260,12 +261,27 @@
     Игрок зарегистрирован и вошел в свой профиль на сайте
     Доступен матч для участия
   test-data: |
-    No data
+    const _ = require("lodash");
+    const R = require("rambda");
+    const solution = (width, length) => {
+      return width * length;
+    };
+    module.exports = solution;
   steps:
-    - Завершить матч победой
+    - Нажать "Create a Game"
+    - В открывшемся окне выбрать Level - 1
+    - Game Type - With a bot
+    - Time control - 8 min
+    - Choose task by name or tags - rect_area
+    - Нажать "Create battle"
+    - Написать решение задачи
+    - Нажать на кнопку "Run" (матч завершится победой)
     - Перейти в профиль пользователя
     - Проверить, что ранг увеличился на 1 очко
-    - Завершить матч поражением
+    - создать игру по шагам описанным выше
+    - Нажать на троеточие рядом с кнопкой "Run" 
+    - Нажать на кнопку "Give up"
+    - Подтвердить действие (матч завершится поражением)
     - Перейти в профиль пользователя
     - Проверить, что ранг уменьшился на 1 очко
   expected-result: |
@@ -604,15 +620,20 @@
     Пользователь зарегистрирован и вошел в свой профиль на сайте
     Пользователь вступил в игру с ранее выбраными условиями
   test-data: |
-    Task = rect_area
+    const _ = require("lodash");
+    const R = require("rambda");
+    const solution = (width, length) => {
+      return width * length;
+    };
+    module.exports = solution;
   steps:
-    - Запустить игру
-    - Написать "const _ = require("lodash");
-               const R = require("rambda");
-               const solution = (width, length) => {
-                 return width * length;
-               };
-               module.exports = solution;"
+    - Нажать "Create a Game"
+    - В открывшемся окне выбрать Level - 1
+    - Game Type - With a bot
+    - Time control - 8 min
+    - Choose task by name or tags - rect_area
+    - Нажать "Create battle"
+    - Написать решение задачи
     - Нажать на кнопку "Run"
   expected-result: |
     Пользователь получает уведомление о победе "Woohoo, you're Champion!!!!!"
