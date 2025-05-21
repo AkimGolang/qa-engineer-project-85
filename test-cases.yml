@@ -64,7 +64,7 @@
   requirement: |
     Пользователь должен иметь возможность зарегистрироваться и войти на сайт при помощи Github
   prerequisites: |
-    Необходим аккаунт в Discord
+    Необходим аккаунт в Github
     Открыта страница регистрации (https://codebattle.hexlet.io/users/new?locale=en&next=%2F)
   test-data: |
     no data
@@ -80,6 +80,7 @@
   requirement: |
     Пользователь должен иметь возможность зарегистрироваться и войти на сайт при помощи Discord
   prerequisites: |
+    Необходим аккаунт в Discord
     Открыта страница регистрации (https://codebattle.hexlet.io/users/new?locale=en&next=%2F)
   test-data: |
     no data
@@ -175,6 +176,7 @@
 - summary: |
     Проверка успешного входа на сайт с помощью Github
   requirement: |
+    Необходим аккаунт в Github
     Пользователь должен иметь возможность зарегистрироваться и войти на сайт при помощи Github
   prerequisites: |
     Открыта страница логина (https://codebattle.hexlet.io/session/new?locale=en&next=%2F)
@@ -190,6 +192,7 @@
 - summary: |
     Проверка успешного входа на сайт с помощью Discord
   requirement: |
+    Необходим аккаунт в Discord
     Пользователь должен иметь возможность регистрации и аутентификации на сайте при помощи Discord
   prerequisites: |
     Открыта страница логина (https://codebattle.hexlet.io/session/new?locale=en&next=%2F)
