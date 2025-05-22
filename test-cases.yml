@@ -182,7 +182,7 @@
     Открыта страница логина (https://codebattle.hexlet.io/session/new?locale=en&next=%2F)
   test-data: |
     no data
-  steps: |
+  steps:
     - Нажать на кнопку "Sign in with GitHub"
     - Ввести данные GitHub и подтвердить вход
   expected-result: |
@@ -198,7 +198,7 @@
     Открыта страница логина (https://codebattle.hexlet.io/session/new?locale=en&next=%2F)
   test-data: |
     no data
-  steps: |
+  steps:
     - Нажать на кнопку "Sign in with Discord"
     - Ввести данные Discord и подтвердить вход
   expected-result: |
@@ -214,7 +214,7 @@
     Пользователь не зарегистрирован
   test-data: |
     no data
-  steps: |
+  steps:
     - Перейти на сайт как гость
     - Нажать на кнопку "Try simple battle"
   expected-result: |
@@ -230,7 +230,7 @@
     Игрок зарегистрирован и вошел в свой профиль на сайте
   test-data: |
     No data
-  steps: |
+  steps:
     - Нажать на имя пользоватея в шапке профиля
     - Выбрать пункт "My profile"
   expected-result: |
@@ -246,7 +246,7 @@
     Игрок не участвовал ни в одном матче (0 игр)
   test-data: |
     No data
-  steps: |
+  steps:
     - Нажать на имя пользоватея в шапке профиля
     - Выбрать пункт "My profile"
   expected-result: |
@@ -270,7 +270,7 @@
       return width * length;
     };
     module.exports = solution;
-  steps: |
+  steps:
     - Нажать "Create a Game"
     - В открывшемся окне выбрать Level - 1
     - Game Type - With a bot
@@ -301,7 +301,7 @@
   test-data: |
     Email = VladimirKomarov@mail.ru
     Пароль = Q123456!
-  steps: |
+  steps:
     - Нажать "Create a Game"
     - В открывшемся окне выбрать Level - 1
     - Game Type - With a bot
@@ -322,7 +322,7 @@
   test-data: |
     Email = VladimirKomarov@mail.ru
     Пароль = Q123456!
-  steps: |
+  steps:
     - Нажать "Create a Game"
     - В открывшемся окне выбрать Level - 1
     - Game Type - with other user
@@ -342,7 +342,7 @@
   test-data: |
     Доступные языки: 
     Clojure, C++, C#, Swift, Dart, Elixir, Go, Haskell, Java, Javascript, Kotlin, Php, Python, Ruby, Rust, Typescript
-  steps: |
+  steps:
     - Нажать "Create a Game"
     - Level = 1
     - Game Type - With a bot
@@ -383,7 +383,7 @@
     Players limit = 64
     Match timeout seconds = 177
     Break duration seconds = 42
-  steps: |
+  steps:
     - Перейти в раздел "Tournaments"
     - Нажать "You may want to create one"
     - перейти в конец страницы до раздела "Create a new tournament"
@@ -415,7 +415,7 @@
     Открыта страница (https://codebattle.hexlet.io/)
   test-data: |
     No data
-  steps: |
+  steps:
     - На главной странце перейти раздел "Tournaments"
     - Выбрать любой доступный турнир и нажать "Show"
     - Проверить что пользователь находиться в интерфейсе турнира (Название турнира, чат, количество участников, описание)
@@ -434,7 +434,7 @@
   test-data: |
     Email = VladimirKomarov@mail.ru
     Пароль = Q123456!
-  steps: |
+  steps:
     - На главной странце найти раздел "Lobby"
     - Найти доступную игру в списке
     - Нажать кнопку "Fight"
@@ -451,7 +451,7 @@
     Открыта главная страница сайта https://codebattle.hexlet.io/
   test-data: |
     No data
-  steps: |
+  steps:
     - В шапке справа главной страницы должны отображаться игроки Online
   expected-result: |
     Отображается надпись вида "число игровков Online"
@@ -466,7 +466,7 @@
   test-data: |
     Email = VladimirKomarov@mail.ru
     Пароль = Q123456!
-  steps: |
+  steps:
     - В правом верхнем углу страницы нажимаем кнопку "careate a game"
     - В открывшемся модальном окне в пункте "game type" выбрать "with other user"
     - Нажимаем кнопку "create battle"
@@ -484,7 +484,7 @@
   test-data: |
     Email = VladimirKomarov@mail.ru
     Пароль = Q123456!
-  steps: |
+  steps:
     - В шапке сайта нажать на имя пользователя
     - В выпадающем списке выбрать пункт "My profile"
   expected-result: |
@@ -500,7 +500,7 @@
   test-data: | 
     Email = VladimirKomarov@mail.ru
     Пароль = Q123456!
-  steps: |
+  steps:
     - Нажать на имя пользователя
     - Нажать на "Settings"
     - В поле "Your name" вводим новое имя
@@ -518,7 +518,7 @@
   test-data: | 
     Email = VladimirKomarov@mail.ru
     Пароль = Q123456!
-  steps: |
+  steps:
     - Нажать на имя пользователя
     - Нажать на "Settings"
     - В поле "Your clan" ввести "Good_Clan"
@@ -536,7 +536,7 @@
   test-data: |
     Email = VladimirKomarov@mail.ru
     Пароль = Q123456!
-  steps: |
+  steps:
     - В шапке сайта нажать на имя пользователя
     - В выпадающем списке выбрать пункт "Settings"
     - В выпадающем списке "Your weapon" выбрать любой другой язык программирования
@@ -554,7 +554,7 @@
   test-data: |
     Email = VladimirKomarov@mail.ru
     Пароль = Q123456!
-  steps: |
+  steps:
     - В правом верхнем углу страницы нажимаем кнопку "careate a game"
     - В открывшемся модальном окне в пункте "game type" выбрать "with a friend"
     - В том же окне в пункте "choose opponent" выбрать имя друга
@@ -571,7 +571,7 @@
     Открыта главная страница сайта (https://codebattle.hexlet.io/)
   test-data: |
     no data
-  steps: |
+  steps:
     - В поле ввода сообщения написать "Hello, everyone!"
     - Нажать кнопку "Send"
   expected-result: |
@@ -586,7 +586,7 @@
     Открыта главная страница сайта (https://codebattle.hexlet.io/)
   test-data: |
     no data
-  steps: |
+  steps:
     - В поле ввода сообщения написать "Hello, everyone!"
     - Нажать кнопку "Send"
     - Навести курсор на отправленное сообщение и нажать на него правой кнопкой мыши
@@ -603,7 +603,7 @@
     Открыта главная страница сайта (https://codebattle.hexlet.io/)
   test-data: |
     no data
-  steps: |
+  steps:
     - Найти в лобби любой активный матч между двумя игроками
     - Нажать кнопку "Show"
     - Проверить отображение окон кода обоих игроков обновляющихся в реальном времени
@@ -629,7 +629,7 @@
       return width * length;
     };
     module.exports = solution;
-  steps: |
+  steps:
     - Нажать "Create a Game"
     - В открывшемся окне выбрать Level - 1
     - Game Type - With a bot
@@ -650,7 +650,7 @@
     Пользователь вступил в игру с ранее выбраными условиями
   test-data: |
     No data
-  steps: |
+  steps:
     - Нажать "Create a Game"
     - В открывшемся окне выбрать Level - 1
     - Game Type - with a bot
@@ -670,7 +670,7 @@
     Пользователь вступил в игру с ранее выбраными условиями
   test-data: |
     Task = rect_area
-  steps: |
+  steps:
     - Запустить игру
     - Нажать на троеточие рядом с кнопкой "Run" 
     - Нажать на кнопку "Give up"
@@ -687,7 +687,7 @@
     Пользователь вступил в игру с ранее выбраными условиями
   test-data: |
     Task = rect_area
-  steps: |
+  steps:
     - Запустить игру
     - Дождаться окончания времени
   expected-result: |
@@ -702,7 +702,7 @@
     Пользователь вступил в игру с ранее выбраными условиями
   test-data: |
     любая задача
-  steps: |
+  steps:
     - Запустить игру
     - Нажать на кнопку "Run"
   expected-result: |
@@ -720,7 +720,7 @@
     IPad Mini (768×1024 пикселей)
     Asus Zenbook Fold (853×1280 пикселей)
     Samsung Galaxy 51/71 (412×914 пикселей)
-  steps: |
+  steps:
     - Открываем DevTools
     - При помощи сочетания клавиш Ctr+Shift+M открываем Toggle Device Toolbar
     - В меню Dimensions поочередно выбираем устройства из списка
@@ -741,7 +741,7 @@
   test-data: |
     Email = VladimirKomarov@mail.ru
     Пароль = Q123456!
-  steps: |
+  steps:
     - Открываем главную страницу  (https://codebattle.hexlet.io/)
     - Проверить корректное отображение всех элементов главной страницы (Логотип, кнопки, меню)
     - Авторизоваться и перейти в профиль пользователя
@@ -760,7 +760,7 @@
     Открыта главная страница  (https://codebattle.hexlet.io/)
   test-data: |
     no data
-  steps: |
+  steps:
     - Перейти в профиль и скопировать ссылку на него
     - Попробовать открыть ссылку в другом браузере
   expected-result: |
@@ -774,7 +774,7 @@
     Открыта главная страница  (https://codebattle.hexlet.io/)
   test-data: |
     no data
-  steps: |
+  steps:
     - Проверить наличие значка замка в браузере
     - В DevTools во вкладке Privacy and security проверить что страница защищена протоколом https
     - Вручную поменять протокол сайта с https на http (http://codebattle.hexlet.io/)
@@ -791,7 +791,7 @@
     Открыта главная страница  (https://codebattle.hexlet.io/)
   test-data: |
     no data
-  steps: |
+  steps:
     - Открыть DevTools и перейти во вкладку Cookies (Application > Cookies)
     - Удалить все куки
     - Обновить страницу
@@ -809,7 +809,7 @@
     Запрос добавлен в коллекцию
   test-data: |
     GET https://codebattle.hexlet.io/
-  steps: |
+  steps:
     - Открыть ранее созданную коллекцию и нажать "Run Collection"
     - Установить "Iterations: 1000"
     - Установить "Delay: 5"
